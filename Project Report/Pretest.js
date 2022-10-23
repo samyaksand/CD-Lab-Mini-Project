@@ -20,7 +20,7 @@ formElement.onsubmit = function submitAnswers() {
 	// }
 
 	// Set Correct Answers
-	var answers = [ 'c', 'b', 'a', 'd', 'b' ];
+	var answers = [ 'c', 'b', 'a', 'c', 'b' ];
 
 	// Check Answers
 	for (i = 1; i <= total; i++) {
