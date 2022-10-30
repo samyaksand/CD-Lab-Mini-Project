@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pretest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open Sans"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+      article {
+        margin: 3%;
+        letter-spacing: 0.5px;
+        font-size: 100%;
+      }
+      .question {
+        margin: auto 10% 2% 10%;
+      }
+      form > p {
+        font-size: 1.3rem;
+        font-weight: 800;
+      }
+      .submit {
+        border-radius: 5px;
+        color: white;
+        font-size: 1rem;
+        padding: 0.7rem;
+        text-align: center;
+        font-weight: bold;
+        margin: 1rem auto;
+        background-color: #007bff;
+        width: 9.3%;
+      }
+      .submit:hover {
+        background-color: #0069d9;
+        cursor: pointer;
+      }
+      label:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="objective.html">Objective</a></li>
+        <li><a href="theory.html">Theory</a></li>
+        <li><a href="#" class="current">Pretest</a></li>
+        <li><a href="instruction.html">Procedure</a></li>
+        <li><a href="simulation.html">Simulation</a></li>
+        <li><a href="posttest.html">Post test</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+    <article>
+      <div
+        class="text"
+        style="
+          margin: auto;
+          border: 0px solid rgb(24, 2, 83);
+          border-radius: 5px;
+          font-size: 100%;
+        "
+      >
+        <div class="question">
+          <form>
+            <p id="q1">
+              Shift reduce parsers are _______
+            </p>
+            <input type="radio" name="q1" id="q1o1" value="--" />
+            <label for="q1o1">Top Down Parsers</label><br />
+            <input type="radio" name="q1" id="q1o2" value="--" />
+            <label for="q1o2">Bottom Up Parsers</label><br />
+          </form>
+        </div>
+        <div class="question">
+          <form>
+            <p id="q2">A grammar that produces more than one parse tree for some sentence is called</p>
+            <input type="radio" name="q2" id="q2o1" value="--" />
+            <label for="q2o1">Ambiguous</label><br />
+            <input type="radio" name="q2" id="q2o2" value="--" />
+            <label for="q2o2">Unambiguous</label><br />
+            <input type="radio" name="q2" id="q2o3" value="--" />
+            <label for="q2o3">Regular</label><br />
+            <input type="radio" name="q2" id="q2o4" value="--" />
+            <label for="q2o4">None</label><br />
+          </form>
+        </div>
+        <div class="question">
+          <form>
+            <p id="q3">Grammar is checked by which component of compiler?</p>
+            <input type="radio" name="q3" id="q3o1" value="--" />
+            <label for="q3o1">lexical Analyzer</label><br />
+            <input type="radio" name="q3" id="q3o2" value="--" />
+            <label for="q3o2">Semantic Analyzer</label><br />
+            <input type="radio" name="q3" id="q3o3" value="--" />
+            <label for="q3o3">Parser</label><br />
+            <input type="radio" name="q3" id="q3o4" value="--" />
+            <label for="q3o4">None of the above</label><br />
+          </form>
+        </div>
+        <div class="question">
+          <form>
+            <p id="q4">
+              Which data structures do shift reduce parser require?
+            </p>
+            <input type="radio" name="q4" id="q4o1" value="--" />
+            <label for="q4o1">Input Buffer</label><br />
+            <input type="radio" name="q4" id="q4o2" value="--" />
+            <label for="q4o2">Stack</label><br />
+            <input type="radio" name="q4" id="q4o3" value="--" />
+            <label for="q4o3">Both (a) and (b)</label><br />
+            <input type="radio" name="q4" id="q4o4" value="--" />
+            <label for="q4o4">None of the above</label><br />
+          </form>
+        </div>
+        <div class="question">
+          <form>
+            <p id="q5">
+              Which of the following is a type/form of shift reduce parser?
+            </p>
+            <input type="radio" name="q5" id="q5o1" value="--" />
+            <label for="q5o1">LR parser</label><br />
+            <input type="radio" name="q5" id="q5o2" value="--" />
+            <label for="q5o2">LL parser</label><br />
+          </form>
+        </div>
+        <div class="submit" onclick="check()">Submit Quiz</div>
+      </div>
+      <div
+        class="container"
+        style="
+          width: 50%;
+          border: 2px solid black;
+          margin: 5% auto;
+          padding: 1%;
+          font-size: large;
+          font-weight: bold;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+            'Lucida Sans', Arial, sans-serif;
+        "
+      >
+        <p id="points" style="margin: 2% auto; text-align: center">Score:</p>
+        <div
+          id="score"
+          style="
+            width: 0;
+            background-color: green;
+            text-align: center;
+            color: white;
+          "
+        ></div>
+      </div>
+    </article>
+    <script>
+      function check() {
+        for (var i = 1; i < 6; i++) {
+          if (i == 1 || i==5)
+            for (var j = 1; j < 3; j++) {
+              document.querySelector(
+                "label[for='q" + i + "o" + j + "']"
+              ).style.color = "black";
+              document.querySelector(
+                "label[for='q" + i + "o" + j + "']"
+              ).style.fontWeight = "normal";
+            }
+          else
+            for (var j = 1; j < 5; j++) {
+              document.querySelector(
+                "label[for='q" + i + "o" + j + "']"
+              ).style.color = "black";
+              document.querySelector(
+                "label[for='q" + i + "o" + j + "']"
+              ).style.fontWeight = "normal";
+            }
+        }
+        var score = 0;
+        var ans = ["q1o2", "q2o2", "q3o3", "q4o3", "q5o1"];
+        for (var i = 1; i < 6; i++) {
+          var selected = "";
+          if (i == 1 || i == 5)
+            for (var j = 1; j < 3; j++) {
+              if (document.getElementById("q" + i + "o" + j).checked) {
+                selected = "q" + i + "o" + j;
+                document.querySelector(
+                  "label[for='q" + i + "o" + j + "']"
+                ).style.fontWeight = "bolder";
+                break;
+              }
+            }
+          else
+            for (var j = 1; j < 5; j++) {
+              if (document.getElementById("q" + i + "o" + j).checked) {
+                selected = "q" + i + "o" + j;
+                document.querySelector(
+                  "label[for='q" + i + "o" + j + "']"
+                ).style.fontWeight = "bolder";
+                break;
+              }
+            }
+
+          if (selected == ans[i - 1]) {
+            document.querySelector(
+              "label[for='" + selected + "']"
+            ).style.color = "green";
+            score++;
+          } else if (selected != "")
+            document.querySelector(
+              "label[for='" + selected + "']"
+            ).style.color = "red";
+        }
+        showScore(score);
+      }
+
+      function showScore(score) {
+        var el = document.getElementById("score");
+        var colors = ["red", "lightRed", "orange", "Green", "darkGreen"];
+        if (score > 0) el.style.backgroundColor = colors[score - 1];
+        var width = 0;
+        var id = setInterval(progress, 10);
+        document.getElementById("points").textContent =
+          "Score: " + score + "/5";
+        function progress() {
+          if (width == 0) {
+            el.style.width = "0%";
+            el.textContent = "";
+          }
+          if (width >= (score * 100) / 5) clearInterval(id);
+          else {
+            width++;
+            el.style.width = width + "%";
+            el.textContent = width + "%";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

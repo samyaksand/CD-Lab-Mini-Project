@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instruction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open Sans"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+      article {
+        margin: 6% 25%;
+        padding: 3%;
+        border: 2px dashed #064663;
+      }
+      .in li {
+        margin: 3%;
+      }
+      .next a {
+        color: white;
+        background-color: royalblue;
+        margin: 10% 42.5%;
+        text-decoration: none;
+        padding: 8px;
+        border-radius: 3px;
+        box-shadow: 3px 2px 10px steelblue;
+      }
+      .next a:hover {
+        background-color: rgb(47, 75, 160);
+      }
+      button {
+        background-color: #5584ac;
+        color: white;
+        border-radius: 5px;
+        padding: 0.5em;
+        box-shadow: 3px 2px 10px steelblue;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="objective.html">Objective</a></li>
+        <li><a href="theory.html">Theory</a></li>
+        <li><a href="Pretest.html">Pretest</a></li>
+        <li><a href="instruction.html" class="current">Procedure</a></li>
+        <li><a href="simulation.html">Simulation</a></li>
+        <li><a href="posttest.html">Post test</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+    <article>
+      <section class="u-clearfix u-grey-5 u-section-2" id="sec-2f8f">
+        <div class="u-clearfix u-sheet u-sheet-1">
+          <!-- <h3 class="u-text u-text-1">Simulator</h3> -->
+          <p class="u-text u-text-2"> 
+            1. The grammar used for the given simulator is as shown below: <br><br>
+            E-> TE’ <br>
+            E’->+TE’ | e <br>
+            T->FT’ <br>
+            T’->*FT’ | e <br>
+            F->(E) | id 
+             <br><br>
+            2. Enter the input string in the given input field. <br><br>
+            3. Click on the “submit” button provided below.<br><br>
+            4. The Parse table with stack, input string, and action will be printed.<br><br>
+            5. The status(i.e., accepted or rejected) will be displayed below the table.
+            
+        </div>
+      </section>
+      <div class="next"><a href="simulation.html">Next</a></div>
+    </article>
+  </body>
+</html>

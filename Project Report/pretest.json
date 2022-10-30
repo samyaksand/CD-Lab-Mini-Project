@@ -1,0 +1,48 @@
+[
+  {
+    "question": "Single stuck at faults are technology independant. Select True or False",
+    "answers": {
+      "a": "True",
+      "b": "False"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "Two stable states of latches are _____________",
+    "answers": {
+      "a": "Astable & Monostable",
+      "b": "Low Input & High Output",
+      "c": "High Output & Low Output",
+      "d": "Low Output & High Input"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "D-Latches can be designed using _____________",
+    "answers": {
+      "a": "Encoders",
+      "b": "Logic Gates",
+      "c": "ICs",
+      "d": "Multiplexers"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "How many NAND Gates are required to make a D-Latch (Without using any other logic gate)?",
+    "answers": {
+      "a": "1",
+      "b": "2",
+      "c": "3",
+      "d": "4"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "question": "When stuck at faults are applied to a circuit, output of the circuit always remain constant. Select True or False",
+    "answers": {
+      "a": "True",
+      "b": "False"
+    },
+    "correctAnswer": "b"
+  }
+]

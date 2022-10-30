@@ -1,0 +1,50 @@
+{
+  "details": [
+    {
+      "Experiment": "To detect Stuck-at-one (SA1) fault in D-latch and simulate ideal and faulty D-latch circuit",
+      "Lab": "Design of Digital Systems Lab",
+      "Discipline": "Computer Science",
+      "Technology": "HTML, Javascript, CSS"
+    }
+  ],
+
+  "developer": [
+    {
+      "Developer": "Dr. Biswajit R. Bhowmik",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+    }
+  ],
+
+  "contributer": [
+    {
+      "Contributer": "Aman Singh Hada",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+    },
+
+    {
+      "Contributer": "Tejas Sankpal",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+    },
+
+    {
+      "Contributer": "Pratik Pawar",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+    },
+
+    {
+      "Contributer": "Amandeep Singh",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+    },
+
+    {
+      "Contributer": "Om Kamble",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+    }
+  ]
+}
