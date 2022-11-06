@@ -69,6 +69,7 @@
       }
       #Table {
         border-collapse: collapse;
+        
       }
       #bulb2 {
         z-index: 10;
@@ -169,30 +170,49 @@ padding: 10px;
         <li><a href="../index.html">Home</a></li>
         <li><a href="objective.html">Objective</a></li>
         <li><a href="theory.html">Theory</a></li>
-        <li><a href=".Pretest.html">Pretest</a></li>
+        <li><a href="Pretest.html">Pretest</a></li>
         <li><a href="instruction.html">Procedure</a></li>
         <li><a href="simulation.html" class="current">Simulation</a></li>
         <li><a href="posttest.html">Post test</a></li>
         <li><a href="references.html">References</a></li>
       </ul>
     </nav>
+
+
+      <h1  style="text-align:center;"> <b>SIMULATION</b></h1>
+    </div>
+
     <div class="main">
-      <h1>Shift Reduce Parser</h1>
+        <h1>Shift Reduce Parser</h1>
     
-      <h2>String: <input type="text" placeholder="Enter the expression" id="inp"><br><br>
-      <button class="in" onclick="start()">Submit</button><br>
-      <p>The parsing table is given below : 
-    </h2>
-    <h3>
-     
-      <div id="ans">
+        <h2>String: <input type="text" placeholder="Enter the expression" id="inp"><br><br>
+          <button class="in" onclick="start()">Submit</button><br>
+          <p>The parsing table is given below : 
+          </h2>
+
+      <div id="ans" style="display: none;">
         
       </div>
   
-    </h3>
+      <h3><button class="in" onclick="disp()">Display</button><br></h3>
+      <h3><button class="in" onclick="myfunc()">Reset</button></h3>
+      <h4>
+      <div id="disp">
+        <table id="tbl">
+          <tr>
+            <th>Stack</th>
+            <th>Input</th>
+            <th>Action</th>
+          </tr>
+        </table>
+        <br>
+      </div>
+      <div id="res">
+
+      </div>
       <script src="script.js"></script>
     
     </div>
-    
+  </h4>
   </body>
 </html>

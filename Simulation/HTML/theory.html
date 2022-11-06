@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <style>
+        article{
+            margin: 3%;
+            letter-spacing: 0.5px;
+            word-spacing: 3px;
+            font-size: 105%;
+        }
+        .heading{
+            font-weight: bold;
+            font-size: 150%;
+            text-decoration: underline;
+        }
+        figure{
+            border: solid 3px rgb(59, 55, 55);
+            padding: 10px;
+            position: relative;
+        }
+        figcaption{
+            font-weight: 700;
+            font-size: 1em;
+        }
+        span.eq{
+            border: 1px solid black;
+            padding: 0.7em;
+            font-size: larger;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="objective.html">Objective</a></li>
+            <li><a href="#" class="current">Theory</a></li>
+            <li><a href="Pretest.html">Pretest</a></li>
+            <li><a href="instruction.html">Procedure</a></li>
+            <li><a href="simulation.html">Simulation</a></li>
+            <li><a href="posttest.html">Post test</a></li>
+            <li><a href="references.html">References</a></li>
+        
+        </ul>
+    </nav>
+
+<!--     
+    <h1  style="text-align:center;"> <b>THEORY</b></h1> -->
+
+
+    <article>
+        <span style="font-family:Arial">
+        <h1  style="text-align:center;"> <b>THEORY</b></h1>
+        
+            <span class="heading">Introduction</span><br></p>
+        <p class="text">
+           Shift Reduce Parser is a type of Bottom-Up Parser. It generates the Parse Tree from Leaves to the Root. In Shift Reduce Parser, the input string will be reduced to the starting symbol. This reduction can be produced by handling the rightmost derivation in reverse, i.e., from starting symbol to the input string.
+
+           <br><br>Shift Reduce Parser requires two Data Structures : 
+        
+        </p>
+        <p><ul>
+            <li>Input Buffer</li>
+            <li>Stack</li>
+        </ul></p>
+        <p><span class="heading">Overview</span><br></p>
+        <p class="text"> 
+            A shift-reduce parser uses a parse stack which (conceptually) contains grammar symbols. During the operation of the parser, symbols from the input are shifted onto the stack. If a prefix of the symbols on top of the stack matches the RHS of a grammar rule which is the correct rule to use within the current context, then the parser reduces the RHS of the rule to its LHS, replacing the RHS symbols on top of the stack with the nonterminal occurring on the LHS of the rule. This shift-reduce process (Fig 1) continues until the parser terminates, reporting either success or failure. It terminates with success when the input is legal and is accepted by the parser. It terminates with failure if an error is detected in the input.
+            
+            <figure style="margin: 5% 13%; background-color: white style='display:flex'; border: 0ch;">
+                <center>
+                <span ><img src="../images/Process.png" alt="D-latch" width="45%" height="60%" style="margin: auto 2.5%;">
+                    <figcaption style="margin: auto 10%;"><b>Fig.1.</b> Process
+                         </figcaption>
+                </span>
+                </center>
+            </figure> 
+
+            <p><span class="heading">Basic Operations</span></p>
+       
+              
+            <ol>
+                <li><span style="font-size:20px"><strong>Shift :</strong>&nbsp;This involves moving of symbols from input buffer onto the stack.</span></li>
+            <br>
+                <li><span style="font-size:20px"><strong>Reduce :</strong>&nbsp;If the handle appears on top of the stack then, its reduction by using appropriate production rule is done i.e. RHS of production rule is popped out of stack and LHS of production rule is pushed onto the stack.</span></li>
+              <br>
+                <li><span style="font-size:20px"><strong>Accept :</strong>&nbsp;If only start symbol is present in the stack and the input buffer is empty then, the parsing action is called accept. When accept action is obtained, it is means successful parsing is done.</span></li>
+          <br>
+                <li><span style="font-size:20px"><strong>Error :</strong>&nbsp;This is the situation in which the parser can neither perform shift action nor reduce action and not even accept action.</span></li>
+            </ol>
+            
+            </span>
+        <p><span class="heading">Example</span><br></p>
+
+        <p><span style="font-size:18px"><span style="font-family:Arial"><span style="color:#303030">Consider the following grammar given below :</span></span></span></p>
+
+<ul>
+	<li><span style="font-size:11.5pt"><span style="font-family:Arial"><span style="color:#303030">E &rarr; E &ndash; E</span></span></span></li>
+	<li><span style="font-size:11.5pt"><span style="font-family:Arial"><span style="color:#303030">E &rarr; E x E</span></span></span></li>
+	<li><span style="font-size:11.5pt"><span style="font-family:Arial"><span style="color:#303030">E &rarr; id</span></span></span></li>
+</ul>
+
+<p><span style="font-size:18px"><span style="font-family:Arial"><span style="color:#303030">Parse the input string : id &ndash; id x id using a shift-reduce parser.</span></span></span></p>
+
+<p><u><span style="font-size:20px"><span style="font-family:Arial"><span style="color:#303030"><strong>Solution</strong></span></span></span></u></p>
+
+<p><span style="font-size:20px"><strong><span style="font-family:Arial"><span style="color:#303030">Parse Table&nbsp;</span></span></strong></span></p>
+
+<table cellspacing="0" style="border-collapse:collapse; border:none; width:536px">
+	<tbody>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:18px"><span style="font-family:Arial"><span style="color:#303030"><strong>Stack</strong></span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:18px"><span style="font-family:Arial"><span style="color:#303030"><strong>Input Buffer</strong></span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:18px"><span style="font-family:Arial"><span style="color:#303030"><strong>Parsing Action</strong></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">id &ndash; id x id $</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Shift</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ id</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">&ndash; id x id $</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Reduce E &rarr; id</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">&ndash; id x id $</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Shift</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E &ndash;</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">id x id $</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Shift</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E &ndash; id</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">x id $</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Reduce E &rarr; id</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E &ndash; E</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">x id $</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Shift</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E &ndash; E x</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">id $</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Shift</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E &ndash; E x id</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Reduce E &rarr; id</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E &ndash; E x E</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Reduce E &rarr; E x E</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E &ndash; E</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Reduce E &rarr; E &ndash; E</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:154px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$ E</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa; border-top:1px solid #aaaaaa; vertical-align:top; width:191px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">$</span></span></span></p>
+			</td>
+			<td style="background-color:#ffffff; border-color:#aaaaaa; border-style:solid; border-width:1px; vertical-align:top; width:187px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial"><span style="color:#303030">Accept</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size:11.5pt"><span style="font-family:Arial"><span style="color:#303030">&nbsp;</span></span></span></p>
+
+<p><strong><span style="font-size:20px"><span style="font-family:Nunito,sans-serif"><span style="color:#000000"><span style="background-color:#ffffff">At last, Stack contains Starting Symbol E, and input Buffer is empty. It will accept the string.</span></span></span></span></strong></p>
+
+<p>&nbsp;</p>
+
+      
+
+    </article>
+</body>
+</html>

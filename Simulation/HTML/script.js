@@ -1,14 +1,15 @@
+var x;
+var val2;
+var fres;
 function start(){
     var str = String(document.getElementById('inp').value);
     const val = document.getElementById('ans');
+    
     var k=0, j=0, i=0, z=0, c=0;
     var user_inp = str.split("");
     console.log(user_inp);
     var stack = [];
-    function setCharAt(str,index,chr) {
-        if(index > str.length-1) return str;
-        return str.substring(0,index) + chr + str.substring(index+1);
-    }
+    
     function check(){
         
      for(z=0; z<str.length; z++)
@@ -17,7 +18,7 @@ function start(){
            stack[z]='E';
            stack[z+1]='\0';
            let st = stack.join(" ");
-            let inp = user_inp.join(" ");
+            let inp = user_inp.join(" ")+' $';
            ans +="<tr><td>"+st+"</td><td>"+inp+"</td><td>REDUCE</td></tr>";
            j++;
          }
@@ -28,7 +29,7 @@ function start(){
            stack[z+1]='\0';
            stack[z+2]='\0';
            let st = stack.join(" ");
-              let inp = user_inp.join(" ");
+              let inp = user_inp.join(" ")+' $';
            ans += "<tr><td>"+st+"</td><td>"+inp+"</td><td>REDUCE</td></tr>";
            i=i-2;
          }
@@ -39,7 +40,7 @@ function start(){
            stack[z+1]='\0';
            stack[z+2]='\0';
            let st = stack.join(" ");
-              let inp = user_inp.join(" ");
+              let inp = user_inp.join(" ")+' $';
            ans += "<tr><td>"+st+"</td><td>"+inp+"</td><td>REDUCE</td></tr>";
            i=i-2;
          }
@@ -50,7 +51,7 @@ function start(){
            stack[z+1]='\0';
            stack[z+2]='\0';
            let st = stack.join(" ");
-              let inp = user_inp.join(" ");
+              let inp = user_inp.join(" ")+' $';
            ans += "<tr><td>"+st+"</td><td>"+inp+"</td><td>REDUCE</td></tr>";
            i=i-2;
          }
@@ -66,7 +67,7 @@ function start(){
               user_inp[j]=' ';
               user_inp[j+1]=' ';
               let st = stack.join(" ");
-              let inp = user_inp.join(" ");
+              let inp = user_inp.join(" ")+' $';
               ans += "<tr><td>"+st+"</td><td>"+inp+"</td><td>SHIFT</td></tr>";
               check();
            }
@@ -76,7 +77,7 @@ function start(){
               stack[i+1]='\0';
               user_inp[j]=' ';
               let st = stack.join(" ");
-              let inp = user_inp.join(" ");
+              let inp = user_inp.join(" ")+' $';
               ans += "<tr><td>"+st+"</td><td>"+inp+"</td><td>SHIFT</td></tr>";
               
               check();
@@ -84,17 +85,46 @@ function start(){
     }
     check();
     if(stack[0] == 'E' && stack[1] == '\0'){
-        ans += "<tr><td>ACCEPTED</td><td>ACCEPTED</td><td>ACCEPTED</td></tr></table>";
+        fres = "<h2>String is accepted!</h2>"
+        ans += "<h2><tr><td>ACCEPTED</td><td>ACCEPTED</td><td>ACCEPTED</td></tr></table>";
     }
 	else{
+        fres = "<h2>String is rejected!</h2>"
         ans += "<tr><td>REJECTED</td><td>REJECTED</td><td>REJECTED</td></tr></table>";
     }
-    val.innerHTML=ans;
-		
-
     
-    
+    val.innerHTML=ans; 
+    x = document.querySelector("#ans > table").rows.length;
+    val2  = document.getElementById('disp');
 }
+
+    console.log(x);
+    var cnt = 2;
+    function disp(){
+      if(cnt>=x){
+        var res = document.getElementById('res');
+        res.innerHTML = fres;
+      }
+      else{
+        var tbl = document.getElementById("tbl");
+      var row = tbl.insertRow();
+      var cell1 = row.insertCell();
+      var cell2 = row.insertCell();
+      var cell3 = row.insertCell();
+      
+      cell1.innerHTML = document.querySelector(`#ans > table > tbody > tr:nth-child(${cnt}) > td:nth-child(1)`).textContent;
+      cell2.innerHTML = document.querySelector(`#ans > table > tbody > tr:nth-child(${cnt}) > td:nth-child(2)`).textContent;
+      cell3.innerHTML = document.querySelector(`#ans > table > tbody > tr:nth-child(${cnt}) > td:nth-child(3)`).textContent;
+      cnt = cnt+1;
+      }
+      
+      
+    }
+
+    function myfunc(){
+      location.reload();
+    }
+    
 
 
 

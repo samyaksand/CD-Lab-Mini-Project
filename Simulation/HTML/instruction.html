@@ -16,11 +16,13 @@
       article {
         margin: 6% 25%;
         padding: 3%;
-        border: 2px dashed #064663;
+        border: 5px solid #5584ac;
       }
       .in li {
         margin: 3%;
       }
+
+      
       .next a {
         color: white;
         background-color: royalblue;
@@ -55,22 +57,24 @@
         <li><a href="references.html">References</a></li>
       </ul>
     </nav>
+
+    <h2  style="text-align:center;"> <b>PROCEDURE</b></h2>
+
     <article>
+      
       <section class="u-clearfix u-grey-5 u-section-2" id="sec-2f8f">
         <div class="u-clearfix u-sheet u-sheet-1">
           <!-- <h3 class="u-text u-text-1">Simulator</h3> -->
           <p class="u-text u-text-2"> 
             1. The grammar used for the given simulator is as shown below: <br><br>
-            E-> TE’ <br>
-            E’->+TE’ | e <br>
-            T->FT’ <br>
-            T’->*FT’ | e <br>
-            F->(E) | id 
-             <br><br>
+            E->E + E<br>
+            E->E * E<br>
+            E-> (E)<br>
+            E->id <br><br>
             2. Enter the input string in the given input field. <br><br>
             3. Click on the “submit” button provided below.<br><br>
             4. The Parse table with stack, input string, and action will be printed.<br><br>
-            5. The status(i.e., accepted or rejected) will be displayed below the table.
+            5. The status (i.e., accepted or rejected) will be displayed below the table.
             
         </div>
       </section>

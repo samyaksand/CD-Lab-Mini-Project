@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Pretest</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Test</title>
     <link
       href="https://fonts.googleapis.com/css?family=Raleway"
       rel="stylesheet"
@@ -37,8 +39,8 @@
         width: 9.3%;
       }
       .submit:hover {
-        background-color: #0069d9;
         cursor: pointer;
+        background-color: #0069d9;
       }
       label:hover {
         cursor: pointer;
@@ -51,14 +53,18 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="objective.html">Objective</a></li>
         <li><a href="theory.html">Theory</a></li>
-        <li><a href="#" class="current">Pretest</a></li>
+        <li><a href="Pretest.html">Pretest</a></li>
         <li><a href="instruction.html">Procedure</a></li>
         <li><a href="simulation.html">Simulation</a></li>
-        <li><a href="posttest.html">Post test</a></li>
+        <li><a href="#" class="current">Post test</a></li>
         <li><a href="references.html">References</a></li>
       </ul>
     </nav>
+
+    <!-- <h1  style="text-align:center;"> <b>POST TEST</b></h1> -->
+
     <article>
+      <h1  style="text-align:center;"> <b>POST TEST</b></h1>
       <div
         class="text"
         style="
@@ -71,64 +77,72 @@
         <div class="question">
           <form>
             <p id="q1">
-              Shift reduce parsers are _______
+              A bottom up parser generates
             </p>
             <input type="radio" name="q1" id="q1o1" value="--" />
-            <label for="q1o1">Top Down Parsers</label><br />
+            <label for="q1o1">rightmost derivation</label><br />
             <input type="radio" name="q1" id="q1o2" value="--" />
-            <label for="q1o2">Bottom Up Parsers</label><br />
+            <label for="q1o2">Rightmost derivation in reverse</label><br />
+            <input type="radio" name="q1" id="q1o3" value="--" />
+            <label for="q1o3">Leftmost derivation</label
+            ><br />
+            <input type="radio" name="q1" id="q1o4" value="--" />
+            <label for="q1o4">Leftmost derivation in reverse</label
+            ><br />
           </form>
         </div>
         <div class="question">
           <form>
-            <p id="q2">A grammar that produces more than one parse tree for some sentence is called</p>
+            <p id="q2">
+              What is the output of lexical analyser?
+            </p>
             <input type="radio" name="q2" id="q2o1" value="--" />
-            <label for="q2o1">Ambiguous</label><br />
+            <label for="q2o1">A set of Regular Expression</label><br />
             <input type="radio" name="q2" id="q2o2" value="--" />
-            <label for="q2o2">Unambiguous</label><br />
+            <label for="q2o2">Syntax Tree</label><br />
             <input type="radio" name="q2" id="q2o3" value="--" />
-            <label for="q2o3">Regular</label><br />
+            <label for="q2o3">Set of tokens</label><br />
             <input type="radio" name="q2" id="q2o4" value="--" />
-            <label for="q2o4">None</label><br />
+            <label for="q2o4">String of characters</label><br />
           </form>
         </div>
         <div class="question">
           <form>
-            <p id="q3">Grammar is checked by which component of compiler?</p>
+            <p id="q3">Considering SLR, LR and LALR parsing,</p>
             <input type="radio" name="q3" id="q3o1" value="--" />
-            <label for="q3o1">lexical Analyzer</label><br />
+            <label for="q3o1">All use different algorithm but same parsing table</label><br />
             <input type="radio" name="q3" id="q3o2" value="--" />
-            <label for="q3o2">Semantic Analyzer</label><br />
+            <label for="q3o2">Same algorithm different parsing table</label><br />
             <input type="radio" name="q3" id="q3o3" value="--" />
-            <label for="q3o3">Parser</label><br />
+            <label for="q3o3">Same algorithm same parsing table</label><br />
             <input type="radio" name="q3" id="q3o4" value="--" />
-            <label for="q3o4">None of the above</label><br />
+            <label for="q3o4">Different algorithm different parsing table</label><br />
           </form>
         </div>
         <div class="question">
           <form>
             <p id="q4">
-              Which data structures do shift reduce parser require?
+              What is the maximum number of reduce moves that can be taken by a bottom-up parser for a grammar with no epsilon and unit production(i.e, of type A ->e and A-> a) to parse a string with n tokens?
             </p>
             <input type="radio" name="q4" id="q4o1" value="--" />
-            <label for="q4o1">Input Buffer</label><br />
+            <label for="q4o1">n/2</label><br />
             <input type="radio" name="q4" id="q4o2" value="--" />
-            <label for="q4o2">Stack</label><br />
+            <label for="q4o2">n-1</label><br />
             <input type="radio" name="q4" id="q4o3" value="--" />
-            <label for="q4o3">Both (a) and (b)</label><br />
+            <label for="q4o3">2n-1</label><br />
             <input type="radio" name="q4" id="q4o4" value="--" />
-            <label for="q4o4">None of the above</label><br />
+            <label for="q4o4">n<sup>2</sup></label><br />
           </form>
         </div>
         <div class="question">
           <form>
             <p id="q5">
-              Which of the following is a type/form of shift reduce parser?
+              Bottom up parsing builds parse tree from
             </p>
             <input type="radio" name="q5" id="q5o1" value="--" />
-            <label for="q5o1">LR parser</label><br />
+            <label for="q5o1">Root to leaves</label><br />
             <input type="radio" name="q5" id="q5o2" value="--" />
-            <label for="q5o2">LL parser</label><br />
+            <label for="q5o2">Leaves to root</label><br />
           </form>
         </div>
         <div class="submit" onclick="check()">Submit Quiz</div>
@@ -161,7 +175,7 @@
     <script>
       function check() {
         for (var i = 1; i < 6; i++) {
-          if (i == 1 || i==5)
+          if (i == 5)
             for (var j = 1; j < 3; j++) {
               document.querySelector(
                 "label[for='q" + i + "o" + j + "']"
@@ -181,10 +195,10 @@
             }
         }
         var score = 0;
-        var ans = ["q1o2", "q2o2", "q3o3", "q4o3", "q5o1"];
+        var ans = ["q1o2", "q2o3", "q3o2", "q4o2", "q5o2"];
         for (var i = 1; i < 6; i++) {
           var selected = "";
-          if (i == 1 || i == 5)
+          if (i == 5)
             for (var j = 1; j < 3; j++) {
               if (document.getElementById("q" + i + "o" + j).checked) {
                 selected = "q" + i + "o" + j;
